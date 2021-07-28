@@ -2,7 +2,9 @@ package com.smalaca.rentalapplication.infrastructure.persistence.jpa.apartmentbo
 
 import com.smalaca.rentalapplication.domain.apartmentbookinghistory.ApartmentBookingHistory;
 import com.smalaca.rentalapplication.domain.apartmentbookinghistory.ApartmentBookingHistoryRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 class JpaApartmentBookingHistoryRepository implements ApartmentBookingHistoryRepository {
     private final SpringJpaApartmentBookingHistoryRepository springJpaApartmentBookingHistoryRepository;
 

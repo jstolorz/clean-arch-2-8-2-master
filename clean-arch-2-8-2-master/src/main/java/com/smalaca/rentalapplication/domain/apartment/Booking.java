@@ -2,13 +2,14 @@ package com.smalaca.rentalapplication.domain.apartment;
 
 import com.smalaca.rentalapplication.domain.eventchannel.EventChannel;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.List;
 
-//@Entity
+@Entity
 public class Booking {
     @Id
     @GeneratedValue
@@ -17,6 +18,8 @@ public class Booking {
     private final RentalType rentalType;
     private final String rentalPlaceId;
     private final String tenantId;
+
+    @ElementCollection
     private final List<LocalDate> days;
     private BookingStatus bookingStatus = BookingStatus.OPEN;
 
