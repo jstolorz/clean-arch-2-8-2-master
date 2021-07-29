@@ -4,6 +4,8 @@ import com.smalaca.rentalapplication.domain.apartment.Booking;
 import com.smalaca.rentalapplication.domain.apartment.BookingRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
 class JpaBookingRepository implements BookingRepository {
     private final SpringJpaBookingRepository springJpaBookingRepository;
@@ -13,12 +15,12 @@ class JpaBookingRepository implements BookingRepository {
     }
 
     @Override
-    public void save(Booking booking) {
-
+    public String save(Booking booking) {
+       return springJpaBookingRepository.save(booking).id();
     }
 
     @Override
     public Booking findById(String bookingId) {
-        return null;
+        return springJpaBookingRepository.findById(UUID.fromString(bookingId)).get();
     }
 }

@@ -4,9 +4,20 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 class SquareMeter {
-    private final Double value;
+    private Double value;
+
+    private SquareMeter() {
+    }
 
     SquareMeter(Double value) {
+        this.value = value;
+    }
+
+    private Double getValue() {
+        return value;
+    }
+
+    private void setValue(final Double value) {
         this.value = value;
     }
 }

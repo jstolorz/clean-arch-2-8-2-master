@@ -22,7 +22,7 @@ public class BookingAssertion {
         return hasBookingStatusEqualTo(BookingStatus.OPEN);
     }
 
-    BookingAssertion isAccepted() {
+    public BookingAssertion isAccepted() {
         return hasBookingStatusEqualTo(BookingStatus.ACCEPTED);
     }
 
@@ -61,5 +61,9 @@ public class BookingAssertion {
     public BookingAssertion containsAllDays(List<LocalDate> expected) {
         Assertions.assertThat(actual).hasFieldOrPropertyWithValue("days", expected);
         return this;
+    }
+
+    public BookingAssertion isRejected() {
+       return hasBookingStatusEqualTo(BookingStatus.REJECTED);
     }
 }
